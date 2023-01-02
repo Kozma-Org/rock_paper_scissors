@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  logout: Log out
+  game_name: Rock Paper Scissors
+  home: Home
