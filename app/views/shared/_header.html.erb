@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-brand">
       <b>
-        <img src="icons/rpc.png" alt="Bootstrap" width="32" height="32"> <%= I18n.t('game_name') %>
+        <img src="/icons/rpc.png" alt="Rock Paper Scissors" width="32" height="32"> <%= I18n.t('game_name') %>
       </b>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +13,21 @@
         <li class="nav-item">
           <%= link_to(I18n.t('home'), root_path, class: "nav-link active") %>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= I18n.t('settings') %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <% if user_signed_in? %>
+                <%= button_to(I18n.t('sign_out'), destroy_user_session_path, class: "dropdown-item", method: :delete) %>
+              <% else %>
+                <%= button_to(I18n.t('sign_in'), new_user_session_path, class: "dropdown-item") %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
       </ul>
-      <form class="d-flex">
-        <button class="btn btn-outline-success" type="submit"><%= I18n.t('logout') %></button>
-      </form>
     </div>
   </div>
 </nav>
