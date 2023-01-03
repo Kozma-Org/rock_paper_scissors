@@ -1,0 +1,13 @@
+<div class="container">
+  <% if notice %>
+    <div class="col-lg-6 mx-auto alert alert-info alert-dismissible fade show m-3" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="col-lg-6 mx-auto alert alert-warning alert-dismissible fade show m-3" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
+</div>

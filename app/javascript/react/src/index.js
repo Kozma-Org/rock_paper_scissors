@@ -1,1 +1,1 @@
-import Welcome from "./components/Welcome";
+import RockPaperScissorsApp from "./components/RockPaperScissorsApp";

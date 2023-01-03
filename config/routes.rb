@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
+  }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'home#index'
+
+  resources :games, only: [] do
+    get :play, on: :collection
+  end
 end
