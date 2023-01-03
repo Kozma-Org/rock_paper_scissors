@@ -1,33 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="navbar-brand">
-      <b>
-        <img src="/icons/rpc.png" alt="Rock Paper Scissors" width="32" height="32"> <%= I18n.t('game_name') %>
-      </b>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to(I18n.t('home'), root_path, class: "nav-link active") %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= I18n.t('settings') %>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <b>
+          <img src="/icons/rpc.png" alt="Rock Paper Scissors" width="32" height="32"> <%= t(:game_name) %>
+        </b>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to(t(:home), root_path, class: "nav-link active") %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= t(:settings) %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
-                <%= button_to(I18n.t('sign_out'), destroy_user_session_path, class: "dropdown-item", method: :delete) %>
+                <li><%= link_to(t(:profile), edit_user_registration_path, class: "dropdown-item") %></li>
+                <li><%= link_to(t(:statistic), "", class: "dropdown-item") %></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= button_to(t(:sign_out), destroy_user_session_path, class: "dropdown-item", method: :delete) %></li>
               <% else %>
-                <%= button_to(I18n.t('sign_in'), new_user_session_path, class: "dropdown-item") %>
+                <li><%= link_to(t(:sign_in), new_user_session_path, class: "dropdown-item") %></li>
               <% end %>
-            </li>
-          </ul>
-        </li>
-      </ul>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

@@ -34,5 +34,22 @@ en:
   game_name: Rock Paper Scissors
   home: Home
   settings: Settings
+  profile: My Profile
+  statistic: Statistic
   sign_in: Sign In
   sign_out: Sign Out
+  rules_head: What are the rules?
+  rules_description: "The rules are very simple and probably you remember them from your childhood:"
+  choose_rock: If you choose Rock, you will win against Scissors but lose against Paper.
+  choose_scissors: If you choose Scissors, you will win against Paper but lose against Rock.
+  choose_paper: If you choose Paper, you will win against Rock but lose against Scissors.
+  best_strategy_head: What is the best strategy in rock, paper, scissors?
+  best_strategy: |
+    Unless you can sense a general pattern in your opponent's play, just try to be as random as possible.
+    If you never let your opponent know your next move, then they will have no way of getting an edge on you.
+  why_head: Why is rock, paper, scissors so popular?
+  why: |
+    People play Rock, Paper, Scissors for all sorts of reasons. One of the most common reasons for playing the game is to settle disputes.
+    It is kind of like tossing a coin, just with a little bit more strategy involved and in a more dynamic way.
+  lets_play: Let's play!
+

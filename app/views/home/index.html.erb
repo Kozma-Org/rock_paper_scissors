@@ -1,2 +1,22 @@
-<div>test</div>
-<div id="welcome"></div>
+<h1 class="text-center text-uppercase"><%= t(:game_name) %></h1>
+
+<h2><%= t(:rules_head) %></h2>
+<h6><%= t(:rules_description) %></h6>
+
+<ul>
+  <li><%= t(:choose_rock) %></li>
+  <li><%= t(:choose_scissors) %></li>
+  <li><%= t(:choose_paper) %></li>
+</ul>
+
+<h2><%= t(:best_strategy_head) %></h2>
+<h6><%= simple_format t(:best_strategy) %></h6>
+
+<h2><%= t(:why_head) %></h2>
+<h6><%= simple_format t(:why) %></h6>
+
+<% if user_signed_in? %>
+  <div class="col-lg-2 mx-auto">
+    <%= link_to(I18n.t("lets_play"), play_games_path, class: "btn btn-lg btn-success mb-3") %>
+  </div>
+<% end %>
