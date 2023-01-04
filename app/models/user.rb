@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
+  # ASSOCIATIONS
+
+  has_many :matches
+
   private
 
   def after_confirmation
