@@ -27,9 +27,10 @@ class Match < ApplicationRecord
   private
 
   def set_opponent_hand
-    self.oponent_hand = begin
-                          RockPaperScissors::Client.throw
-                        rescue
+    response = RockPaperScissors::Client.throw
+    self.oponent_hand = if response[:success]
+                          response[:body]
+                        else
                           HANDS.sample
                         end
   end
