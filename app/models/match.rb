@@ -1,12 +1,13 @@
-class Match < ApplicationRecord
+# frozen_string_literal: true
 
+class Match < ApplicationRecord
   # CONSTANTS
 
-  HANDS = ["rock", "paper", "scissors"].freeze
+  HANDS = %w[rock paper scissors].freeze
   RULES = {
-    "rock" => "scissors",
-    "paper" =>  "rock",
-    "scissors" => "paper"
+    'rock' => 'scissors',
+    'paper' => 'rock',
+    'scissors' => 'paper'
   }.freeze
 
   # ENUMS
@@ -43,11 +44,11 @@ class Match < ApplicationRecord
 
   def set_status
     self.status = if RULES[player_hand] == opponent_hand
-                    "won"
+                    'won'
                   elsif player_hand == opponent_hand
-                    "tie"
+                    'tie'
                   else
-                    "lost"
+                    'lost'
                   end
   end
 end

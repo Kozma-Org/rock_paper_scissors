@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :match do
     association :user
-    player_hand { "rock" }
+    player_hand { 'rock' }
   end
 
-  factory :won_match, class: "Match" do
+  factory :won_match, class: 'Match' do
     association :user
-    player_hand { "rock" }
-    opponent_hand { "scissors" }
-    status { "won" }
+    player_hand { 'rock' }
+    opponent_hand { 'scissors' }
+    status { 'won' }
   end
 
-  factory :lost_match, class: "Match" do
+  factory :lost_match, class: 'Match' do
     association :user
-    player_hand { "rock" }
-    opponent_hand { "paper" }
-    status { "lost" }
+    player_hand { 'rock' }
+    opponent_hand { 'paper' }
+    status { 'lost' }
   end
 end

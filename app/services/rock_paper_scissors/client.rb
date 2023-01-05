@@ -1,4 +1,6 @@
-require "net/http"
+# frozen_string_literal: true
+
+require 'net/http'
 
 module RockPaperScissors
   class Client
@@ -12,7 +14,7 @@ module RockPaperScissors
           Rails.logger.info("GET #{API_URL}")
           response = Net::HTTP.get_response(URI(API_URL))
           response_handler(response)
-        rescue => e
+        rescue StandardError => e
           Rails.logger.debug(e)
           tries += 1
           if tries <= MAX_TRY
@@ -21,17 +23,17 @@ module RockPaperScissors
           else
             Rails.logger.info("Retry limit has been reached: #{MAX_TRY}")
           end
-          { status_code: 500, status_message: "Something went wrong.", success: false }
+          { status_code: 500, status_message: 'Something went wrong.', success: false }
         end
       end
 
-      def response_handler response
+      def response_handler(response)
         body = JSON.parse(response.body).with_indifferent_access
         case response.code
-        when "200"
+        when '200'
           body.merge!(success: true)
         else
-          { status_code: response.code.to_i, status_message: body["message"], success: false }
+          { status_code: response.code.to_i, status_message: body['message'], success: false }
         end
       end
     end
