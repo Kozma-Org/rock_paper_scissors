@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -10,5 +12,11 @@ Rails.application.routes.draw do
 
   resources :games, only: [] do
     get :play, on: :collection
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :matches, only: [:create]
+    end
   end
 end
