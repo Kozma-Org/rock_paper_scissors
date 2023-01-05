@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_133901) do
   create_table "matches", force: :cascade do |t|
     t.integer "user_id"
     t.string "player_hand", default: "", null: false
-    t.string "oponent_hand", default: "", null: false
+    t.string "opponent_hand", default: "", null: false
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

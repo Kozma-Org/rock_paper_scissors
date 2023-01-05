@@ -3,6 +3,11 @@ class Match < ApplicationRecord
   # CONSTANTS
 
   HANDS = ["rock", "paper", "scissors"].freeze
+  RULES = {
+    "rock" => "scissors",
+    "paper" =>  "rock",
+    "scissors" => "paper"
+  }.freeze
 
   # ENUMS
 
@@ -10,8 +15,8 @@ class Match < ApplicationRecord
 
   # VALIDATIONS
 
-  validates_presence_of :player_hand, :oponent_hand
-  validates :player_hand, :oponent_hand, inclusion: { in: HANDS }
+  validates_presence_of :player_hand, :opponent_hand
+  validates :player_hand, :opponent_hand, inclusion: { in: HANDS }
   validates :status, presence: true, inclusion: { in: statuses.keys }
 
   # ASSOCIATIONS
@@ -20,7 +25,8 @@ class Match < ApplicationRecord
 
   # HOOKS
 
-  before_create :set_opponent_hand, if: -> { oponent_hand.blank? }
+  before_validation :set_opponent_hand, on: :create
+  before_validation :set_status,        on: :create
 
   # INSTANCE METHODS
 
@@ -28,10 +34,20 @@ class Match < ApplicationRecord
 
   def set_opponent_hand
     response = RockPaperScissors::Client.throw
-    self.oponent_hand = if response[:success]
-                          response[:body]
-                        else
-                          HANDS.sample
-                        end
+    self.opponent_hand = if response[:success]
+                           response[:body]
+                         else
+                           HANDS.sample
+                         end
+  end
+
+  def set_status
+    self.status = if RULES[player_hand] == opponent_hand
+                    "won"
+                  elsif player_hand == opponent_hand
+                    "tie"
+                  else
+                    "lost"
+                  end
   end
 end
