@@ -5,6 +5,7 @@ require 'net/http'
 module RockPaperScissors
   class Client
     API_URL = ENV['PRODUCTION_URL']
+    # API_URL = ENV['MOCK_SERVER_URL']
     MAX_TRY = 3
 
     class << self

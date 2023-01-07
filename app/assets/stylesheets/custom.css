@@ -1,0 +1,89 @@
+.rps-title{
+    text-align: left;
+    font: normal normal medium 50px/61px Montserrat;
+    letter-spacing: 0px;
+    color: #36006C;
+    opacity: 1;
+}
+
+.rps-text {
+    text-align: left;
+    font: normal normal 300 21px/32px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 0.54;
+    text-align: justify;
+}
+
+.rps-bet {
+    text-align: left;
+    font: normal normal medium 21px/25px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.rps-hand {
+    height: 273px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rps-hand:hover {
+    background: #F8F8F8;
+    border-radius: 5px;
+}
+
+.rps-rock-hand {
+    width: 69px;
+    height: 161px;
+    background-size: 69px 161px;
+    background: transparent url('/icons/rock.svg') no-repeat;
+}
+
+.rps-paper-hand {
+    width: 69px;
+    height: 161px;
+    background: transparent url('/icons/paper.svg') no-repeat;
+}
+
+.rps-scissors-hand {
+    width: 69px;
+    height: 161px;
+    background: transparent url('/icons/scissors.svg') no-repeat;
+}
+
+.rps-loader {
+    width: 69px;
+    height: 161px;
+    background: transparent url('/icons/loader.png') no-repeat;
+    background-position: center;
+}
+
+.rps-curb {
+    text-align: center;
+    font: normal normal medium 24px/29px Montserrat;
+    letter-spacing: 0px;
+    color: #36006C;
+    opacity: 1;
+    position: absolute;
+    width: 76px;
+    height: 24px;
+    bottom: 0px;
+    background: transparent url('/icons/curb_logo.png') no-repeat;
+}
+
+.rps-name {
+    text-align: center;
+    font: normal normal medium 24px/29px Montserrat;
+    letter-spacing: 0px;
+    color: #36006C;
+    opacity: 1;
+    position: absolute;
+    bottom: 0px;
+}
+

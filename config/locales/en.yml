@@ -52,4 +52,10 @@ en:
     People play Rock, Paper, Scissors for all sorts of reasons. One of the most common reasons for playing the game is to settle disputes.
     It is kind of like tossing a coin, just with a little bit more strategy involved and in a more dynamic way.
   lets_play: Let's play!
+  models:
+    match:
+      statuses:
+        won: You won! %{player_hand} beats %{opponent_hand}!
+        lost: You lost! %{opponent_hand} beats %{player_hand}
+        tie: It is tie!
 
