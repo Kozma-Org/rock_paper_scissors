@@ -31,6 +31,13 @@ class Match < ApplicationRecord
 
   # INSTANCE METHODS
 
+  def game_status
+    I18n.t(status,
+           scope: 'models.match.statuses',
+           player_hand: player_hand.camelize,
+           opponent_hand: opponent_hand.camelize)
+  end
+
   private
 
   def set_opponent_hand
