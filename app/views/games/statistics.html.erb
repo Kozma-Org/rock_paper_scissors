@@ -1,0 +1,34 @@
+<h1 class="text-center text-uppercase"><%= t(:statistics) %></h1>
+
+<table class="table table-light table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t("models.match.hands.rock") %></th>
+    <th scope="col"><%= t("models.match.hands.paper") %></th>
+    <th scope="col"><%= t("models.match.hands.scissors") %></th>
+    <th scope="col"><%= t(:won) %></th>
+    <th scope="col"><%= t(:lost) %></th>
+    <th scope="col"><%= t(:tie) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row"><%= current_user.nickname %></th>
+    <td><%= @user_rps_stat[:rock] %></td>
+    <td><%= @user_rps_stat[:paper] %></td>
+    <td><%= @user_rps_stat[:scissors] %></td>
+    <td><%= @user_stat[:won] %></td>
+    <td><%= @user_stat[:lost] %></td>
+    <td><%= @user_stat[:tie] %></td>
+  </tr>
+  <tr>
+    <th scope="row"><img src="/icons/curb_logo.png"></th>
+    <td><%= @curb_rps_stat[:rock] %></td>
+    <td><%= @curb_rps_stat[:paper] %></td>
+    <td><%= @curb_rps_stat[:scissors] %></td>
+    <td><%= @user_stat[:lost] %></td>
+    <td><%= @user_stat[:won] %></td>
+    <td><%= @user_stat[:tie] %></td>  </tr>
+  </tbody>
+</table>

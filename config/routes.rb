@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [] do
     get :play, on: :collection
+    get :statistics, on: :collection
   end
 
   namespace :api do
