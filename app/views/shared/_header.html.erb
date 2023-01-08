@@ -14,6 +14,11 @@
           <li class="nav-item">
             <%= link_to(t(:home), root_path, class: "nav-link active") %>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to(t(:lets_play), play_games_path, class: "nav-link active") %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <%= t(:settings) %>
@@ -21,7 +26,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
                 <li><%= link_to(t(:profile), edit_user_registration_path, class: "dropdown-item") %></li>
-                <li><%= link_to(t(:statistic), "", class: "dropdown-item") %></li>
+                <li><%= link_to(t(:statistics), statistics_games_path, class: "dropdown-item") %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= button_to(t(:sign_out), destroy_user_session_path, class: "dropdown-item", method: :delete) %></li>
               <% else %>

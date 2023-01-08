@@ -35,7 +35,7 @@ en:
   home: Home
   settings: Settings
   profile: My Profile
-  statistic: Statistic
+  statistics: Statistics
   sign_in: Sign In
   sign_out: Sign Out
   rules_head: What are the rules?
@@ -52,8 +52,15 @@ en:
     People play Rock, Paper, Scissors for all sorts of reasons. One of the most common reasons for playing the game is to settle disputes.
     It is kind of like tossing a coin, just with a little bit more strategy involved and in a more dynamic way.
   lets_play: Let's play!
+  won: Won
+  lost: Lost
+  tie: Tie
   models:
     match:
+      hands:
+        rock: Rock
+        paper: Paper
+        scissors: Scissors
       statuses:
         won: You won! %{player_hand} beats %{opponent_hand}!
         lost: You lost! %{opponent_hand} beats %{player_hand}
