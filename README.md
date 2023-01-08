@@ -11,7 +11,7 @@ Check out the source code.
 
     cd ~/workspace
     git clone git@github.com:YOUR_USERNAME/rock_paper_scissors.git
-    cd tmdb
+    cd rock_paper_scissors
     git remote add upstream git@github.com:kozmasz/rock_paper_scissors.git
 
 
@@ -46,7 +46,7 @@ Check out the source code.
     The provided production is unfortunately not working:
     "https://5eddt4q9dk.execute-api.us-east-1.amazonaws.com/rps-stage/throw"
 
-    The provided mock server url is unfortunately always returns with `rock`:
+    The provided mock server url unfortunately always returns with `rock`:
     "https://private-anon-44b339bffa-curbrockpaperscissors.apiary-mock.com/rps-stage/throw"
 
     In order to setup the `PRODUCTION_URL` choose one of these urls.
@@ -62,3 +62,21 @@ Check out the source code.
 
 * `rails db:create db:schema:load`
 * `bundle exec rspec`
+
+### User manual
+
+* Sign up
+    * Settings -> Sign In -> Click on `Sign up`
+    * Fill the form properly
+    * Submit the form
+    * Clink on the`Confirm my account` link in the sent email
+    * Log in with your credentials
+* Let's Play
+    * Click on the green `Let's play` button or you can reach this through the menu.
+    * Play
+* Statistics
+    * Settings -> Statistics
+    * You can check your game statistics
+* My profile
+    * Settings -> My Profile
+    * You can modify your user data
